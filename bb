@@ -17,11 +17,13 @@ main.Parent = game.CoreGui
 main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = main
-Frame.BackgroundGradient = Enum.GradientType.Horizontal
-Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Start color (red)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(103, 221, 213)
 Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
 Frame.Size = UDim2.new(0, 300, 0, 154)
+Frame.BackgroundGradient = Enum.GradientType.Horizontal
+Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Start color (red)
+Frame.BackgroundTransparency = 0 -- No transparency
 
 up.Name = "lift"
 up.Parent = Frame
