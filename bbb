@@ -1,14 +1,49 @@
--- Instances:
+-- Notification
+game:GetService("StarterGui"):SetCore("SendNotification",{
+    Title = "UI Design and Fly by rave";
+    Text = "TW.RV ON TOP";
+    Duration = 5;
+})
 
+-- Create the main ScreenGui
 local main = Instance.new("ScreenGui")
+main.Name = "main"
+main.Parent = game.CoreGui
+main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- Create the Frame
 local Frame = Instance.new("Frame")
-local up = Instance.new("TextButton")
-local down = Instance.new("TextButton")
-local onof = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local plus = Instance.new("TextButton")
-local speed = Instance.new("TextLabel")
-local mine = Instance.new("TextButton")
+Frame.Parent = main
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Changed to black background
+Frame.BorderColor3 = Color3.fromRGB(103, 221, 213)
+Frame.Position = UDim2.new(0.1, 0, 0.379, 0)
+Frame.Size = UDim2.new(0, 300, 0, 154)
+
+-- Create the X button
+local closeButton = Instance.new("TextButton")
+closeButton.Parent = Frame
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red close button
+closeButton.Position = UDim2.new(1, -20, 0, 0)
+closeButton.Size = UDim2.new(0, 20, 0, 20)
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.TextSize = 14
+closeButton.MouseButton1Click:Connect(function()
+    main:Destroy() -- Destroy the GUI when the X button is clicked
+end)
+
+-- Create the Minimize button
+local minimizeButton = Instance.new("TextButton")
+minimizeButton.Parent = Frame
+minimizeButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0) -- Green minimize button
+minimizeButton.Position = UDim2.new(1, -40, 0, 0)
+minimizeButton.Size = UDim2.new(0, 20, 0, 20)
+minimizeButton.Text = "_"
+minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+minimizeButton.TextSize = 14
+minimizeButton.MouseButton1Click:Connect(function()
+    Frame.Size = UDim2.new(0, 100, 0, 28) -- Collapse the frame when minimize button is clicked
+end)
 
 --Properties:
 
@@ -21,9 +56,6 @@ Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(103, 221, 213)
 Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
 Frame.Size = UDim2.new(0, 300, 0, 154)
-Frame.BackgroundGradient = Enum.GradientType.Horizontal
-Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Start color (red)
-Frame.BackgroundTransparency = 0 -- No transparency
 
 up.Name = "lift"
 up.Parent = Frame
@@ -59,7 +91,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 100, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "TW.RV"
+TextLabel.Text = "JN HH Gaming Da Hood Fly"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
