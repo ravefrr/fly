@@ -1,4 +1,4 @@
-game:GetService("StarterGui"):SetCore("SendNotification",{
+game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "TWR ON TOP";
     Text = "UI + Fly by rave";
     Duration = 10;
@@ -15,8 +15,8 @@ local TextLabel = Instance.new("TextLabel")
 local plus = Instance.new("TextButton")
 local speed = Instance.new("TextLabel")
 local minus = Instance.new("TextButton")
-local minimizeButton = Instance.new("TextButton") -- New minimize button
-local closeButton = Instance.new("TextButton") -- New close (X) button
+local minimizeButton = Instance.new("TextButton")
+local closeButton = Instance.new("TextButton")
 
 -- Properties:
 
@@ -25,15 +25,25 @@ main.Parent = game.CoreGui
 main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = main
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-Frame.BorderColor3 = Color3.fromRGB(255, 0, 0) -- Red border
-Frame.Position = UDim2.new(0.5, -150, 0.5, -77) -- Centered and adjusted for size
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Frame.Position = UDim2.new(0.5, -150, 0, 10) -- Adjusted position for top center
 Frame.Size = UDim2.new(0, 300, 0, 154)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(0.5, -50, 0, 0) -- Positioned at the top center
+TextLabel.Size = UDim2.new(0, 100, 0, 28)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "TWR"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
 
 up.Name = "lift"
 up.Parent = Frame
-up.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-up.Position = UDim2.new(0.03, 0, 0.1, 0)
+up.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+up.Position = UDim2.new(0.8, -45, 0, 30) -- Positioned next to "FLY" button
 up.Size = UDim2.new(0, 90, 0, 28)
 up.Font = Enum.Font.SourceSans
 up.Text = "LIFT"
@@ -42,7 +52,7 @@ up.TextSize = 14
 
 down.Name = "down"
 down.Parent = Frame
-down.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+down.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 down.Position = UDim2.new(0.03, 0, 0.28, 0)
 down.Size = UDim2.new(0, 90, 0, 28)
 down.Font = Enum.Font.SourceSans
@@ -52,7 +62,7 @@ down.TextSize = 14
 
 onof.Name = "onof"
 onof.Parent = Frame
-onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 onof.Position = UDim2.new(0.5, -45, 0.28, 0)
 onof.Size = UDim2.new(0, 90, 0, 28)
 onof.Font = Enum.Font.SourceSans
@@ -60,19 +70,9 @@ onof.Text = "FLY"
 onof.TextColor3 = Color3.fromRGB(255, 255, 255)
 onof.TextSize = 14
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-TextLabel.Position = UDim2.new(0.5, -100, 0, 0)
-TextLabel.Size = UDim2.new(0, 100, 0, 28)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "TWR"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 14
-TextLabel.TextWrapped = true
-
 plus.Name = "plus"
 plus.Parent = Frame
-plus.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+plus.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 plus.Position = UDim2.new(0.03, 0, 0.55, 0)
 plus.Size = UDim2.new(0, 90, 0, 28)
 plus.Font = Enum.Font.SourceSans
@@ -82,7 +82,7 @@ plus.TextSize = 14
 
 speed.Name = "speed"
 speed.Parent = Frame
-speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 speed.Position = UDim2.new(0.5, -45, 0.55, 0)
 speed.Size = UDim2.new(0, 90, 0, 28)
 speed.Font = Enum.Font.SourceSans
@@ -92,7 +92,7 @@ speed.TextSize = 14
 
 minus.Name = "minus"
 minus.Parent = Frame
-minus.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+minus.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 minus.Position = UDim2.new(0.97, -90, 0.55, 0)
 minus.Size = UDim2.new(0, 90, 0, 28)
 minus.Font = Enum.Font.SourceSans
@@ -100,29 +100,38 @@ minus.Text = "-"
 minus.TextColor3 = Color3.fromRGB(255, 255, 255)
 minus.TextSize = 14
 
-speeds = 1
-
 -- Minimize Button
 minimizeButton.Name = "minimizeButton"
 minimizeButton.Parent = Frame
-minimizeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-minimizeButton.Position = UDim2.new(0.5, -90, 1, 5) -- Positioning below the other buttons
-minimizeButton.Size = UDim2.new(0, 80, 0, 20) -- Adjust size as needed
+minimizeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+minimizeButton.Position = UDim2.new(1, -40, 0, 0) -- Positioned next to the close button (X)
+minimizeButton.Size = UDim2.new(0, 20, 0, 20)
 minimizeButton.Font = Enum.Font.SourceSans
-minimizeButton.Text = "Minimize"
+minimizeButton.Text = "-"
 minimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 minimizeButton.TextSize = 14
 
 -- Close Button (X)
 closeButton.Name = "closeButton"
 closeButton.Parent = Frame
-closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-closeButton.Position = UDim2.new(1, -20, 0, 0) -- Positioning on the top-right corner
-closeButton.Size = UDim2.new(0, 20, 0, 20) -- Square size for X button
+closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+closeButton.Position = UDim2.new(1, -20, 0, 0)
+closeButton.Size = UDim2.new(0, 20, 0, 20)
 closeButton.Font = Enum.Font.SourceSans
 closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 closeButton.TextSize = 14
+
+-- Functionality for minimize button
+local minimized = false
+minimizeButton.MouseButton1Click:Connect(function()
+    minimized = not minimized
+    if minimized then
+        Frame.Visible = false
+    else
+        Frame.Visible = true
+    end
+end)
 
 
 local speaker = game:GetService("Players").LocalPlayer
