@@ -9,10 +9,10 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 local main = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
-local topBar = Instance.new("Frame") -- New top bar
-local title = Instance.new("TextLabel") -- New title for the script
-local closeBtn = Instance.new("TextButton") -- New close button
-local minimizeBtn = Instance.new("TextButton") -- New minimize button
+local topBar = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local closeBtn = Instance.new("TextButton")
+local minimizeBtn = Instance.new("TextButton")
 local up = Instance.new("TextButton")
 local down = Instance.new("TextButton")
 local onof = Instance.new("TextButton")
@@ -31,120 +31,124 @@ Frame.Parent = main
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
 Frame.Position = UDim2.new(0.3, 0, 0.4, 0)
-Frame.Size = UDim2.new(0, 220, 0, 160) -- Increased size to fit all buttons
+Frame.Size = UDim2.new(0, 220, 0, 160)
 
-topBar.Parent = Frame -- Added top bar
-topBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25) -- Dark gray
+topBar.Parent = Frame
+topBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 topBar.BorderSizePixel = 0
-topBar.Size = UDim2.new(1, 0, 0, 30) -- Height set to 30
+topBar.Size = UDim2.new(1, 0, 0, 30)
 
-title.Name = "Title" -- Added title for the script
+title.Name = "Title"
 title.Parent = topBar
 title.BackgroundTransparency = 1
 title.Size = UDim2.new(1, 0, 1, 0)
 title.Font = Enum.Font.SourceSans
-title.Text = "TWR" -- Script name
-title.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+title.Text = "TWR"
+title.TextColor3 = Color3.fromRGB(255, 0, 0)
 title.TextSize = 14
 
-closeBtn.Name = "CloseButton" -- Added close button
+closeBtn.Name = "CloseButton"
 closeBtn.Parent = topBar
 closeBtn.BackgroundTransparency = 1
 closeBtn.Position = UDim2.new(1, -30, 0, 0)
 closeBtn.Size = UDim2.new(0, 30, 1, 0)
 closeBtn.Font = Enum.Font.SourceSans
 closeBtn.Text = "X"
-closeBtn.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+closeBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
 closeBtn.TextSize = 14
 closeBtn.MouseButton1Click:Connect(function()
-    main:Destroy() -- Destroy the GUI when clicked
+    Frame.Visible = not Frame.Visible -- Toggle visibility of the main frame
 end)
 
-minimizeBtn.Name = "MinimizeButton" -- Added minimize button
+minimizeBtn.Name = "MinimizeButton"
 minimizeBtn.Parent = topBar
 minimizeBtn.BackgroundTransparency = 1
 minimizeBtn.Position = UDim2.new(1, -60, 0, 0)
 minimizeBtn.Size = UDim2.new(0, 30, 1, 0)
 minimizeBtn.Font = Enum.Font.SourceSans
 minimizeBtn.Text = "-"
-minimizeBtn.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+minimizeBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
 minimizeBtn.TextSize = 14
 minimizeBtn.MouseButton1Click:Connect(function()
-    Frame.Visible = not Frame.Visible -- Toggle visibility of the main frame when clicked
+    if Frame.Size == UDim2.new(0, 220, 0, 160) then
+        Frame.Size = UDim2.new(0, 220, 0, 30) -- Collapse the frame
+    else
+        Frame.Size = UDim2.new(0, 220, 0, 160) -- Expand the frame
+    end
 end)
 
+-- Adjusted positions for buttons:
 up.Name = "UP"
 up.Parent = Frame
 up.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 up.Size = UDim2.new(0, 80, 0, 28)
-up.Position = UDim2.new(0.05, 0, 0.15, 0) -- Adjusted position to fit the top bar
+up.Position = UDim2.new(0.05, 0, 0.15, 0)
 up.Font = Enum.Font.SourceSans
 up.Text = "UP"
 up.TextColor3 = Color3.fromRGB(255, 255, 255)
 up.TextSize = 14
 
-
 down.Name = "DOWN"
 down.Parent = Frame
-down.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+down.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 down.Size = UDim2.new(0, 80, 0, 28)
-down.Position = UDim2.new(0.05, 0, 0.35, 0)
+down.Position = UDim2.new(0.05, 0, 0.45, 0)
 down.Font = Enum.Font.SourceSans
 down.Text = "DOWN"
-down.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+down.TextColor3 = Color3.fromRGB(255, 255, 255)
 down.TextSize = 12
 
 onof.Name = "onof"
 onof.Parent = Frame
-onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 onof.Size = UDim2.new(0, 80, 0, 28)
-onof.Position = UDim2.new(0.6, 0, 0.35, 0)
+onof.Position = UDim2.new(0.6, 0, 0.75, 0)
 onof.Font = Enum.Font.SourceSans
 onof.Text = "FLY"
-onof.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+onof.TextColor3 = Color3.fromRGB(255, 255, 255)
 onof.TextSize = 14
 
 TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.Position = UDim2.new(0.05, 0, 0.65, 0)
 TextLabel.Size = UDim2.new(0, 180, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "TWR"
-TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14
 TextLabel.TextWrapped = true
 
 plus.Name = "plus"
 plus.Parent = Frame
-plus.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+plus.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 plus.Size = UDim2.new(0, 80, 0, 28)
-plus.Position = UDim2.new(0.3, 0, 0.35, 0)
+plus.Position = UDim2.new(0.3, 0, 0.45, 0)
 plus.Font = Enum.Font.SourceSans
 plus.Text = "+"
-plus.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+plus.TextColor3 = Color3.fromRGB(255, 255, 255)
 plus.TextSize = 14
 
 speed.Name = "speed"
 speed.Parent = Frame
-speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-speed.Position = UDim2.new(0.6, 0, 0.65, 0)
+speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+speed.Position = UDim2.new(0.6, 0, 0.45, 0)
 speed.Size = UDim2.new(0, 80, 0, 28)
 speed.Font = Enum.Font.SourceSans
 speed.Text = "1"
-speed.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+speed.TextColor3 = Color3.fromRGB(255, 0, 0)
 speed.TextScaled = true
 speed.TextSize = 14
 speed.TextWrapped = true
 
 mine.Name = "mine"
 mine.Parent = Frame
-mine.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+mine.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 mine.Size = UDim2.new(0, 80, 0, 28)
-mine.Position = UDim2.new(0.3, 0, 0.65, 0)
+mine.Position = UDim2.new(0.3, 0, 0.75, 0)
 mine.Font = Enum.Font.SourceSans
 mine.Text = "-"
-mine.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+mine.TextColor3 = Color3.fromRGB(255, 255, 255)
 mine.TextSize = 14
 
 speeds = 1
