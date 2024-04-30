@@ -9,6 +9,10 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 local main = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
+local topBar = Instance.new("Frame") -- New top bar
+local title = Instance.new("TextLabel") -- New title for the script
+local closeBtn = Instance.new("TextButton") -- New close button
+local minimizeBtn = Instance.new("TextButton") -- New minimize button
 local up = Instance.new("TextButton")
 local down = Instance.new("TextButton")
 local onof = Instance.new("TextButton")
@@ -24,28 +28,69 @@ main.Parent = game.CoreGui
 main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = main
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-Frame.BorderColor3 = Color3.fromRGB(255, 0, 0) -- Red border
-Frame.Position = UDim2.new(0.3, 0, 0.4, 0) -- Adjusted position
-Frame.Size = UDim2.new(0, 200, 0, 120) -- Smaller size
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Frame.Position = UDim2.new(0.3, 0, 0.4, 0)
+Frame.Size = UDim2.new(0, 220, 0, 160) -- Increased size to fit all buttons
 
-up.Name = "lift"
+topBar.Parent = Frame -- Added top bar
+topBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25) -- Dark gray
+topBar.BorderSizePixel = 0
+topBar.Size = UDim2.new(1, 0, 0, 30) -- Height set to 30
+
+title.Name = "Title" -- Added title for the script
+title.Parent = topBar
+title.BackgroundTransparency = 1
+title.Size = UDim2.new(1, 0, 1, 0)
+title.Font = Enum.Font.SourceSans
+title.Text = "TWR" -- Script name
+title.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+title.TextSize = 14
+
+closeBtn.Name = "CloseButton" -- Added close button
+closeBtn.Parent = topBar
+closeBtn.BackgroundTransparency = 1
+closeBtn.Position = UDim2.new(1, -30, 0, 0)
+closeBtn.Size = UDim2.new(0, 30, 1, 0)
+closeBtn.Font = Enum.Font.SourceSans
+closeBtn.Text = "X"
+closeBtn.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+closeBtn.TextSize = 14
+closeBtn.MouseButton1Click:Connect(function()
+    main:Destroy() -- Destroy the GUI when clicked
+end)
+
+minimizeBtn.Name = "MinimizeButton" -- Added minimize button
+minimizeBtn.Parent = topBar
+minimizeBtn.BackgroundTransparency = 1
+minimizeBtn.Position = UDim2.new(1, -60, 0, 0)
+minimizeBtn.Size = UDim2.new(0, 30, 1, 0)
+minimizeBtn.Font = Enum.Font.SourceSans
+minimizeBtn.Text = "-"
+minimizeBtn.TextColor3 = Color3.fromRGB(255, 0, 0) -- Red text
+minimizeBtn.TextSize = 14
+minimizeBtn.MouseButton1Click:Connect(function()
+    Frame.Visible = not Frame.Visible -- Toggle visibility of the main frame when clicked
+end)
+
+up.Name = "UP"
 up.Parent = Frame
-up.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+up.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 up.Size = UDim2.new(0, 80, 0, 28)
-up.Position = UDim2.new(0.05, 0, 0.05, 0)
+up.Position = UDim2.new(0.05, 0, 0.15, 0) -- Adjusted position to fit the top bar
 up.Font = Enum.Font.SourceSans
-up.Text = "LIFT"
-up.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+up.Text = "UP"
+up.TextColor3 = Color3.fromRGB(255, 255, 255)
 up.TextSize = 14
 
-down.Name = "downwards"
+
+down.Name = "DOWN"
 down.Parent = Frame
 down.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
 down.Size = UDim2.new(0, 80, 0, 28)
 down.Position = UDim2.new(0.05, 0, 0.35, 0)
 down.Font = Enum.Font.SourceSans
-down.Text = "DOWNWARDS"
+down.Text = "DOWN"
 down.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
 down.TextSize = 12
 
