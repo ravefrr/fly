@@ -122,15 +122,20 @@ closeButton.Text = "X"
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 closeButton.TextSize = 14
 
--- Functionality for minimize button
-local minimized = false
+local isCollapsed = false
 minimizeButton.MouseButton1Click:Connect(function()
-    minimized = not minimized
-    if minimized then
-        Frame.Visible = false
+    isCollapsed = not isCollapsed
+    if isCollapsed then
+        Frame.Size = UDim2.new(0, 300, 0, 28) -- Collapsed size
+        minimizeButton.Text = "+" -- Change text to "+" when collapsed
     else
-        Frame.Visible = true
+        Frame.Size = UDim2.new(0, 300, 0, 154) -- Expanded size
+        minimizeButton.Text = "-" -- Change text to "-" when expanded
     end
+end)
+
+closeButton.MouseButton1Click:Connect(function()
+    main:Destroy() -- Destroy the main ScreenGui when X button is clicked
 end)
 
 
