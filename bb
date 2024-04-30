@@ -63,7 +63,7 @@ onof.TextSize = 14
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
 TextLabel.Position = UDim2.new(0.5, -100, 0, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 28)
+TextLabel.Size = UDim2.new(0, 100, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "TWR"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -321,7 +321,7 @@ end
 end)
 minus.MouseButton1Down:connect(function()
 if speeds == 1 then
-speed.Text = 'can not be less than 1'
+speed.Text = 'Speed cant be under 1'
 wait(1)
 speed.Text = speeds
 else
