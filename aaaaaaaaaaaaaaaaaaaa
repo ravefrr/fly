@@ -8,13 +8,13 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 local main = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
-local liftButton = Instance.new("TextButton")
-local downButton = Instance.new("TextButton")
-local flyButton = Instance.new("TextButton")
-local titleLabel = Instance.new("TextLabel")
-local plusButton = Instance.new("TextButton")
-local speedLabel = Instance.new("TextLabel")
-local minusButton = Instance.new("TextButton")
+local up = Instance.new("TextButton")
+local down = Instance.new("TextButton")
+local onof = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local plus = Instance.new("TextButton")
+local speed = Instance.new("TextLabel")
+local minus = Instance.new("TextButton")
 
 -- Properties:
 
@@ -28,76 +28,75 @@ Frame.BorderColor3 = Color3.fromRGB(255, 0, 0) -- Red border
 Frame.Position = UDim2.new(0.5, -150, 0.5, -77) -- Centered and adjusted for size
 Frame.Size = UDim2.new(0, 300, 0, 154)
 
-liftButton.Name = "liftButton"
-liftButton.Parent = Frame
-liftButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-liftButton.Position = UDim2.new(0.03, 0, 0.1, 0)
-liftButton.Size = UDim2.new(0, 90, 0, 28)
-liftButton.Font = Enum.Font.SourceSans
-liftButton.Text = "LIFT"
-liftButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-liftButton.TextSize = 14
+up.Name = "lift"
+up.Parent = Frame
+up.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+up.Position = UDim2.new(0.03, 0, 0.1, 0)
+up.Size = UDim2.new(0, 90, 0, 28)
+up.Font = Enum.Font.SourceSans
+up.Text = "LIFT"
+up.TextColor3 = Color3.fromRGB(255, 255, 255)
+up.TextSize = 14
 
-downButton.Name = "downButton"
-downButton.Parent = Frame
-downButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-downButton.Position = UDim2.new(0.03, 0, 0.28, 0)
-downButton.Size = UDim2.new(0, 90, 0, 28)
-downButton.Font = Enum.Font.SourceSans
-downButton.Text = "DOWN"
-downButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-downButton.TextSize = 14
+down.Name = "down"
+down.Parent = Frame
+down.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+down.Position = UDim2.new(0.03, 0, 0.28, 0)
+down.Size = UDim2.new(0, 90, 0, 28)
+down.Font = Enum.Font.SourceSans
+down.Text = "DOWN"
+down.TextColor3 = Color3.fromRGB(255, 255, 255)
+down.TextSize = 14
 
-flyButton.Name = "flyButton"
-flyButton.Parent = Frame
-flyButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-flyButton.Position = UDim2.new(0.5, -45, 0.28, 0)
-flyButton.Size = UDim2.new(0, 90, 0, 28)
-flyButton.Font = Enum.Font.SourceSans
-flyButton.Text = "FLY"
-flyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-flyButton.TextSize = 14
+onof.Name = "onof"
+onof.Parent = Frame
+onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+onof.Position = UDim2.new(0.5, -45, 0.28, 0)
+onof.Size = UDim2.new(0, 90, 0, 28)
+onof.Font = Enum.Font.SourceSans
+onof.Text = "FLY"
+onof.TextColor3 = Color3.fromRGB(255, 255, 255)
+onof.TextSize = 14
 
-titleLabel.Name = "titleLabel"
-titleLabel.Parent = Frame
-titleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-titleLabel.Position = UDim2.new(0.5, -100, 0, 0)
-titleLabel.Size = UDim2.new(0, 200, 0, 28)
-titleLabel.Font = Enum.Font.SourceSans
-titleLabel.Text = "JN HH Gaming Da Hood Fly"
-titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-titleLabel.TextSize = 14
-titleLabel.TextWrapped = true
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+TextLabel.Position = UDim2.new(0.5, -100, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 28)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "TWR"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
 
-plusButton.Name = "plusButton"
-plusButton.Parent = Frame
-plusButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-plusButton.Position = UDim2.new(0.03, 0, 0.55, 0)
-plusButton.Size = UDim2.new(0, 90, 0, 28)
-plusButton.Font = Enum.Font.SourceSans
-plusButton.Text = "+"
-plusButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-plusButton.TextSize = 14
+plus.Name = "plus"
+plus.Parent = Frame
+plus.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+plus.Position = UDim2.new(0.03, 0, 0.55, 0)
+plus.Size = UDim2.new(0, 90, 0, 28)
+plus.Font = Enum.Font.SourceSans
+plus.Text = "+"
+plus.TextColor3 = Color3.fromRGB(255, 255, 255)
+plus.TextSize = 14
 
-speedLabel.Name = "speedLabel"
-speedLabel.Parent = Frame
-speedLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
-speedLabel.Position = UDim2.new(0.5, -45, 0.55, 0)
-speedLabel.Size = UDim2.new(0, 90, 0, 28)
-speedLabel.Font = Enum.Font.SourceSans
-speedLabel.Text = "1"
-speedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-speedLabel.TextSize = 14
+speed.Name = "speed"
+speed.Parent = Frame
+speed.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+speed.Position = UDim2.new(0.5, -45, 0.55, 0)
+speed.Size = UDim2.new(0, 90, 0, 28)
+speed.Font = Enum.Font.SourceSans
+speed.Text = "1"
+speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+speed.TextSize = 14
 
-minusButton.Name = "minusButton"
-minusButton.Parent = Frame
-minusButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
-minusButton.Position = UDim2.new(0.97, -90, 0.55, 0)
-minusButton.Size = UDim2.new(0, 90, 0, 28)
-minusButton.Font = Enum.Font.SourceSans
-minusButton.Text = "-"
-minusButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-minusButton.TextSize = 14
+minus.Name = "minus"
+minus.Parent = Frame
+minus.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Red button
+minus.Position = UDim2.new(0.97, -90, 0.55, 0)
+minus.Size = UDim2.new(0, 90, 0, 28)
+minus.Font = Enum.Font.SourceSans
+minus.Text = "-"
+minus.TextColor3 = Color3.fromRGB(255, 255, 255)
+minus.TextSize = 14
 
 speeds = 1
 
@@ -295,7 +294,7 @@ end)
 end
 end
 end)
-mine.MouseButton1Down:connect(function()
+minus.MouseButton1Down:connect(function()
 if speeds == 1 then
 speed.Text = 'can not be less than 1'
 wait(1)
