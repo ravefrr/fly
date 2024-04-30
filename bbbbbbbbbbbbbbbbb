@@ -131,17 +131,26 @@ minimizeButton.MouseButton1Click:Connect(function()
     if isCollapsed then
         Frame.Size = UDim2.new(0, 300, 0, 28) -- Collapsed size
         minimizeButton.Text = "+" -- Change text to "+" when collapsed
-        -- Move buttons out of the visible area when collapsed
-        minimizeButton.Position = UDim2.new(1, -40, 0, -50)
-        closeButton.Position = UDim2.new(1, -20, 0, -50)
+        -- Hide unnecessary buttons when collapsed
+        up.Visible = false
+        down.Visible = false
+        onof.Visible = false
+        plus.Visible = false
+        speed.Visible = false
+        minus.Visible = false
     else
         Frame.Size = UDim2.new(0, 300, 0, 154) -- Expanded size
         minimizeButton.Text = "-" -- Change text to "-" when expanded
-        -- Reset button positions when expanded
-        minimizeButton.Position = UDim2.new(1, -40, 0, 0)
-        closeButton.Position = UDim2.new(1, -20, 0, 0)
+        -- Show all buttons when expanded
+        up.Visible = true
+        down.Visible = true
+        onof.Visible = true
+        plus.Visible = true
+        speed.Visible = true
+        minus.Visible = true
     end
 end)
+
 
 
 closeButton.MouseButton1Click:Connect(function()
