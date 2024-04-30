@@ -120,10 +120,10 @@ mine.TextColor3 = Color3.fromRGB(255, 255, 255)
 mine.TextSize = 14
 
 -- Speed value label
-local speedValue = Instance.new("TextLabel")
+speed.Name "speed"
 speedValue.Parent = Frame
 speedValue.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-speedValue.Position = UDim2.new(0.5, -40, 0.8, 0)
+speedValue.Position = UDim2.new(0.5, -40, 0.8, 0) -- Adjusted position to be over the "Fly" button with a little space
 speedValue.Size = UDim2.new(0, 80, 0, 28)
 speedValue.Font = Enum.Font.SourceSans
 speedValue.Text = "1" -- Default speed value
@@ -132,8 +132,8 @@ speedValue.TextScaled = true
 speedValue.TextSize = 14
 speedValue.TextWrapped = true
 
--- Fly button
-local onof = Instance.new("TextButton")
+
+-- Fly button\
 onof.Name = "onof"
 onof.Parent = Frame
 onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
