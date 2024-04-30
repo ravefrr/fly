@@ -43,10 +43,10 @@ TextLabel.TextWrapped = true
 up.Name = "lift"
 up.Parent = Frame
 up.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-up.Position = UDim2.new(0.8, -45, 0, 30) -- Positioned next to "FLY" button
+up.Position = UDim2.new(1.5, -45, 0.28, 0) -- Positioned next to "FLY" button
 up.Size = UDim2.new(0, 90, 0, 28)
 up.Font = Enum.Font.SourceSans
-up.Text = "LIFT"
+up.Text = "Up"
 up.TextColor3 = Color3.fromRGB(255, 255, 255)
 up.TextSize = 14
 
@@ -56,7 +56,7 @@ down.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 down.Position = UDim2.new(0.03, 0, 0.28, 0)
 down.Size = UDim2.new(0, 90, 0, 28)
 down.Font = Enum.Font.SourceSans
-down.Text = "DOWN"
+down.Text = "Down"
 down.TextColor3 = Color3.fromRGB(255, 255, 255)
 down.TextSize = 14
 
@@ -66,7 +66,7 @@ onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 onof.Position = UDim2.new(0.5, -45, 0.28, 0)
 onof.Size = UDim2.new(0, 90, 0, 28)
 onof.Font = Enum.Font.SourceSans
-onof.Text = "FLY"
+onof.Text = "Fly"
 onof.TextColor3 = Color3.fromRGB(255, 255, 255)
 onof.TextSize = 14
 
@@ -185,7 +185,7 @@ end)
 
 minus.MouseButton1Down:connect(function()
     if speeds == 1 then
-        speed.Text = 'Speed cant be under 1'
+        speed.Text = 'Cant be under 1'
         wait(1)
         speed.Text = speeds
     else
