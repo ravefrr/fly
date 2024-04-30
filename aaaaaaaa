@@ -18,8 +18,8 @@ local down = Instance.new("TextButton")
 local plus = Instance.new("TextButton")
 local mine = Instance.new("TextButton")
 local onof = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local speed = Instance.new("TextLabel")
+local speedLabel = Instance.new("TextLabel")
+local speedValue = Instance.new("TextLabel")
 
 -- Properties:
 
@@ -31,7 +31,7 @@ Frame.Parent = main
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
 Frame.Position = UDim2.new(0.3, 0, 0.4, 0)
-Frame.Size = UDim2.new(0, 220, 0, 220)
+Frame.Size = UDim2.new(0, 200, 0, 200)
 
 topBar.Parent = Frame
 topBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -50,7 +50,7 @@ title.TextSize = 14
 closeBtn.Name = "CloseButton"
 closeBtn.Parent = topBar
 closeBtn.BackgroundTransparency = 1
-closeBtn.Position = UDim2.new(1, -60, 0, 0)
+closeBtn.Position = UDim2.new(1, -30, 0, 0)
 closeBtn.Size = UDim2.new(0, 30, 1, 0)
 closeBtn.Font = Enum.Font.SourceSans
 closeBtn.Text = "X"
@@ -63,14 +63,16 @@ end)
 minimizeBtn.Name = "MinimizeButton"
 minimizeBtn.Parent = topBar
 minimizeBtn.BackgroundTransparency = 1
-minimizeBtn.Position = UDim2.new(1, -30, 0, 0)
+minimizeBtn.Position = UDim2.new(1, -60, 0, 0)
 minimizeBtn.Size = UDim2.new(0, 30, 1, 0)
 minimizeBtn.Font = Enum.Font.SourceSans
 minimizeBtn.Text = "-"
 minimizeBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
 minimizeBtn.TextSize = 14
+local isMinimized = false
 minimizeBtn.MouseButton1Click:Connect(function()
-    Frame.Visible = not Frame.Visible -- Toggle visibility of the main frame
+    isMinimized = not isMinimized
+    Frame.Visible = not isMinimized
 end)
 
 -- Up button
@@ -100,7 +102,7 @@ plus.Name = "plus"
 plus.Parent = Frame
 plus.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 plus.Size = UDim2.new(0, 80, 0, 28)
-plus.Position = UDim2.new(0, 20, 0.225, 0)
+plus.Position = UDim2.new(0, 20, 0.275, 0)
 plus.Font = Enum.Font.SourceSans
 plus.Text = "+"
 plus.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -111,18 +113,44 @@ mine.Name = "mine"
 mine.Parent = Frame
 mine.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 mine.Size = UDim2.new(0, 80, 0, 28)
-mine.Position = UDim2.new(1, -100, 0.225, 0)
+mine.Position = UDim2.new(1, -100, 0.275, 0)
 mine.Font = Enum.Font.SourceSans
 mine.Text = "-"
 mine.TextColor3 = Color3.fromRGB(255, 255, 255)
 mine.TextSize = 14
+
+-- Speed label
+speedLabel.Name = "speedLabel"
+speedLabel.Parent = Frame
+speedLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+speedLabel.Position = UDim2.new(0.05, 0, 0.4, 0)
+speedLabel.Size = UDim2.new(0, 180, 0, 28)
+speedLabel.Font = Enum.Font.SourceSans
+speedLabel.Text = "Speed:"
+speedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedLabel.TextScaled = true
+speedLabel.TextSize = 14
+speedLabel.TextWrapped = true
+
+-- Speed value
+speedValue.Name = "speedValue"
+speedValue.Parent = Frame
+speedValue.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+speedValue.Position = UDim2.new(0.3, 0, 0.4, 0)
+speedValue.Size = UDim2.new(0, 80, 0, 28)
+speedValue.Font = Enum.Font.SourceSans
+speedValue.Text = "1"
+speedValue.TextColor3 = Color3.fromRGB(255, 0, 0)
+speedValue.TextScaled = true
+speedValue.TextSize = 14
+speedValue.TextWrapped = true
 
 -- Fly button
 onof.Name = "onof"
 onof.Parent = Frame
 onof.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 onof.Size = UDim2.new(0, 120, 0, 28)
-onof.Position = UDim2.new(0.5, -60, 0.9, 0)
+onof.Position = UDim2.new(0.5, -60, 0.525, 0)
 onof.Font = Enum.Font.SourceSans
 onof.Text = "FLY"
 onof.TextColor3 = Color3.fromRGB(255, 255, 255)
