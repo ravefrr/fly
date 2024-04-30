@@ -222,19 +222,6 @@ end)
 
 local speeds = 1 -- Starting speed value
 
--- Minimize button event handler
-minimizeButton.MouseButton1Click:Connect(function()
-    -- Toggle collapse/uncollapse
-    isCollapsed = not isCollapsed
-    if isCollapsed then
-        Frame.Size = UDim2.new(0, 300, 0, 28) -- Collapsed size
-        minimizeButton.Text = "+" -- Change text to "+" when collapsed
-    else
-        Frame.Size = UDim2.new(0, 300, 0, 154) -- Expanded size
-        minimizeButton.Text = "-" -- Change text to "-" when expanded
-    end
-end)
-
 -- Close button event handler
 closeButton.MouseButton1Click:Connect(function()
     main:Destroy() -- Destroy the main ScreenGui when X button is clicked
