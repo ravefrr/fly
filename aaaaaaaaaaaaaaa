@@ -32,7 +32,6 @@ Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
 Frame.Position = UDim2.new(0.3, 0, 0.4, 0)
 Frame.Size = UDim2.new(0, 220, 0, 220)
-Frame.ImageCornerSize = UDim.new(0, 15)
 
 topBar.Parent = Frame
 topBar.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -72,12 +71,8 @@ minimizeBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
 minimizeBtn.TextSize = 14
 local isMinimized = false
 minimizeBtn.MouseButton1Click:Connect(function()
-    -- Toggle the visibility of all elements except the top bar
-    for _, element in pairs(Frame:GetChildren()) do
-        if element ~= topBar then
-            element.Visible = not element.Visible
-        end
-    end
+    isMinimized = not isMinimized
+    Frame.Visible = not isMinimized -- Toggle visibility of the main frame
 end)
 
 -- Up button
